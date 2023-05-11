@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PalestineDryClean.Views.HomePage"
+             Shell.FlyoutBehavior="Disabled"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False"
+             Title="">
+
+
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto" BackgroundColor="White"  RowSpacing="10" Padding="0,20">
+        <Image HeightRequest="500" Source="logo.jpg" Grid.Row="0"/>
+        <VerticalStackLayout Grid.Row="1">
+            <Label Text="أهلاً و سهلا بك" FontFamily="TajawalRegular" HorizontalOptions="Center" TextColor="{DynamicResource Tertiary}" FontSize="24" VerticalOptions="Start" />
+            <Label Text="اختر الخدمة المناسبة لك" HorizontalOptions="Center" FontFamily="TajawalRegular" TextColor="{DynamicResource Tertiary}" FontSize="22" VerticalOptions="End" />
+        </VerticalStackLayout>
+
+        <Button Grid.Row="2" Text="طلب سريع"  FontFamily="TajawalRegular" FontSize="20" TextColor="White"  BackgroundColor="{DynamicResource Secondary}" FontAttributes="Bold" HeightRequest="100" CornerRadius="50"/>
+        <Button x:Name="Custom_Order_Btn" Clicked="Custom_Order_Btn_Clicked" Grid.Row="3" Text="طلب مخصص" FontFamily="TajawalRegular"  FontSize="20" TextColor="White" BackgroundColor="{DynamicResource Primary}"   HeightRequest="100" FontAttributes="Bold" CornerRadius="50"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PalestineDryClean.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PalestineDryClean"
+    FlowDirection="RightToLeft"
+    xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+    xmlns:views="clr-namespace:PalestineDryClean.Views"
+    xmlns:pages="clr-namespace:PalestineDryClean.Views.Pages"
+    Shell.BackgroundColor="{DynamicResource Primary}"
+    Shell.ForegroundColor="#39538c"
+    BackgroundColor="{DynamicResource Primary}"
+    Shell.FlyoutBehavior="Disabled">
+    <Shell.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="{DynamicResource Primary}" StatusBarStyle="LightContent" />
+    </Shell.Behaviors>
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:HomePage}"
+        Route="HomePage" />
+
+    <ShellContent
+        Title="طلب مخصص"
+        ContentTemplate="{DataTemplate pages:CustomOrderPage}"
+        Route="CustomOrderPage" />
+
+</Shell>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:PalestineDryClean.ViewModels"
+             x:DataType="viewmodel:CustomOrdersPageViewModel"
+             Shell.FlyoutBehavior="Flyout"
+             xmlns:model="clr-namespace:PalestineDryClean.Models"
+             Shell.NavBarIsVisible="True"
+             Title="طلب مخصص"
+             Shell.TitleColor="#39538c"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             x:Class="PalestineDryClean.Views.Pages.CustomOrderPage">
+
+    <Grid RowDefinitions="*"  RowSpacing="10" Margin="10" BackgroundColor="White">
+        <syncfusion:SfListView 
+            SelectionMode="Single" 
+            AutoFitMode="DynamicHeight"
+            SelectionBackground="{DynamicResource Primary}"
+            ItemSpacing="10" 
+            ItemSize="120"
+            Grid.Row="0"
+            ItemsSource="{Binding CustomOrderList}">
+            <syncfusion:SfListView.ItemsLayout>
+                <syncfusion:GridLayout SpanCount="2" />
+            </syncfusion:SfListView.ItemsLayout>
+            
+            <syncfusion:SfListView.ItemTemplate>
+                <DataTemplate x:DataType="model:CustomOrderItem">
+                    <Border Stroke="#39538c" StrokeShape="RoundRectangle 5,5,5,5" Padding="10">
+                   
+                    <Grid RowDefinitions="0.8*,0.2*" >
+                            <Image Source="{Binding ImageName}" Grid.Row="0"/>
+                            <Label HorizontalOptions="Center" Grid.Row="1" Text="{Binding Name}" FontFamily="TajawalRegular" TextColor="{DynamicResource Tertiary}" FontSize="20"/>
+                    </Grid>
+                    </Border>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView>
+    </Grid>
+</ContentPage>
